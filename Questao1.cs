@@ -4,6 +4,10 @@ namespace Desafio.Target.Sistemas
 {
     public static class Questao1
     {
+        public record Venda(string Vendedor, decimal Valor);
+
+        public record Dados(List<Venda> Vendas);
+
         private static readonly JsonSerializerOptions Opcoes = new()
         {
             PropertyNameCaseInsensitive = true
@@ -91,8 +95,4 @@ namespace Desafio.Target.Sistemas
             return valor * 0.05m;
         }
     }
-
-    public record Venda(string Vendedor, decimal Valor);
-
-    public record Dados(List<Venda> Vendas);
 }
